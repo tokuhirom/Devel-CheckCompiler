@@ -73,6 +73,20 @@ Devel::CheckCompiler - Check the compiler's availability
 
 Devel::CheckCompiler is checker for compiler's availability.
 
+=head1 FUNCTIONS
+
+=over 4
+
+=item check_c99()
+
+Returns true if the current system has a working C99 compiler, false otherwise.
+
+=item check_c99_or_exit()
+
+Check the current system has a working C99 compiler, if it's not available, exit by 0.
+
+=back
+
 =head1 AUTHOR
 
 Tokuhiro Matsuno E<lt>tokuhirom AAJKLFJEF@ GMAIL COME<gt>
