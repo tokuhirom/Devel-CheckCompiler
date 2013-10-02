@@ -2,6 +2,11 @@ Revision history for Perl extension Devel::CheckCompiler
 
 {{$NEXT}}
 
+0.03 2013-10-02T06:15:48Z
+
+    - Export check_compiler() function.
+      (tokuhirom)
+
 0.02
 
     - docs

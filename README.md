@@ -14,13 +14,17 @@ Devel::CheckCompiler is checker for compiler's availability.
 
 # FUNCTIONS
 
-- check\_c99()
+- `check_c99()`
 
     Returns true if the current system has a working C99 compiler, false otherwise.
 
-- check\_c99\_or\_exit()
+- `check_c99_or_exit()`
 
     Check the current system has a working C99 compiler, if it's not available, exit by 0.
+
+- `check_compile($src: Str)`
+
+    Compile `$src` as C code. Return 1 if it's available, 0 otherwise.
 
 # AUTHOR
 
