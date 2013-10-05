@@ -22,9 +22,15 @@ Devel::CheckCompiler is checker for compiler's availability.
 
     Check the current system has a working C99 compiler, if it's not available, exit by 0.
 
-- `check_compile($src: Str)`
+- `check_compile($src: Str, %options)`
 
     Compile `$src` as C code. Return 1 if it's available, 0 otherwise.
+
+    Possible options are:
+
+    - executable :Bool = false
+
+        Check to see if generating executable is possible if this parameter is true.
 
 # AUTHOR
 

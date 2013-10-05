@@ -4,7 +4,7 @@
       "Tokuhiro Matsuno <tokuhirom AAJKLFJEF@ GMAIL COM>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Minilla/v0.7.0, CPAN::Meta::Converter version 2.132510",
+   "generated_by" : "Minilla/v0.7.3, CPAN::Meta::Converter version 2.132140",
    "license" : [
       "perl_5"
    ],
@@ -70,6 +70,8 @@
    },
    "version" : "0.03",
    "x_contributors" : [
-      "tokuhirom <tokuhirom@gmail.com>"
+      "Neil Bowers <neil@bowers.com>",
+      "Syohei YOSHIDA <syohex@gmail.com>",
+      "Tokuhiro Matsuno <tokuhirom@gmail.com>"
    ]
 }
