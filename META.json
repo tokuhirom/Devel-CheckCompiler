@@ -68,10 +68,10 @@
          "web" : "https://github.com/tokuhirom/Devel-CheckCompiler"
       }
    },
-   "version" : "0.03",
+   "version" : "0.04",
    "x_contributors" : [
       "Neil Bowers <neil@bowers.com>",
-      "Syohei YOSHIDA <syohex@gmail.com>",
-      "Tokuhiro Matsuno <tokuhirom@gmail.com>"
+      "Tokuhiro Matsuno <tokuhirom@gmail.com>",
+      "Syohei YOSHIDA <syohex@gmail.com>"
    ]
 }
