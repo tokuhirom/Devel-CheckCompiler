@@ -32,7 +32,7 @@ sub check_c99_or_exit {
 }
 
 sub check_compile {
-    my ($src) = shift;
+    my ($src, %opt) = @_;
 
     my $cbuilder = ExtUtils::CBuilder->new(quiet => 1);
     return 0 unless $cbuilder->have_compiler;
@@ -47,8 +47,20 @@ sub check_compile {
         $cbuilder->compile(source => $tmpfile->filename);
     };
     if ($objname) {
+        my $ret = 1;
+        if ($opt{executable}) {
+            my $execfile = eval {
+                $cbuilder->link_executable(objects => $objname);
+            };
+
+            if ($execfile) {
+                unlink $execfile or warn "Cannot unlink $execfile (ignored): $!";
+            } else {
+                $ret = 0;
+            }
+        }
         unlink $objname or warn "Cannot unlink $objname (ignored): $!";
-        return 1;
+        return $ret;
     } else {
         return 0;
     }
@@ -85,9 +97,19 @@ Returns true if the current system has a working C99 compiler, false otherwise.
 
 Check the current system has a working C99 compiler, if it's not available, exit by 0.
 
-=item C<check_compile($src: Str)>
+=item C<check_compile($src: Str, %options)>
 
 Compile C<$src> as C code. Return 1 if it's available, 0 otherwise.
+
+Possible options are:
+
+=over
+
+=item executable :Bool = false
+
+Check to see if generating executable is possible if this parameter is true.
+
+=back
 
 =back
 
