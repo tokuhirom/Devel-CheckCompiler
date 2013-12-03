@@ -32,6 +32,11 @@ Devel::CheckCompiler is checker for compiler's availability.
 
         Check to see if generating executable is possible if this parameter is true.
 
+    - extra\_linker\_flags : Str | ArrayRef\[Str\]
+
+        Any additional flags you wish to pass to the linker. This option is used
+        only when `executable` option specified.
+
 # AUTHOR
 
 Tokuhiro Matsuno <tokuhirom AAJKLFJEF@ GMAIL COM>

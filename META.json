@@ -4,7 +4,7 @@
       "Tokuhiro Matsuno <tokuhirom AAJKLFJEF@ GMAIL COM>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Minilla/v0.7.3, CPAN::Meta::Converter version 2.132140",
+   "generated_by" : "Minilla/v0.11.0, CPAN::Meta::Converter version 2.132140",
    "license" : [
       "perl_5"
    ],
@@ -21,7 +21,8 @@
          "share",
          "eg",
          "examples",
-         "author"
+         "author",
+         "builder"
       ]
    },
    "prereqs" : {
@@ -68,7 +69,7 @@
          "web" : "https://github.com/tokuhirom/Devel-CheckCompiler"
       }
    },
-   "version" : "0.04",
+   "version" : "0.05",
    "x_contributors" : [
       "Neil Bowers <neil@bowers.com>",
       "Tokuhiro Matsuno <tokuhirom@gmail.com>",
