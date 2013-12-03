@@ -2,6 +2,9 @@ Revision history for Perl extension Devel::CheckCompiler
 
 {{$NEXT}}
 
+    - Add extra_linker_flags to check_compiler()
+      (Syohei YOSHIDA)
+
 0.04 2013-10-05T06:05:09Z
 
     - Add executable flag to check_compiler()
@@ -19,4 +22,3 @@ Revision history for Perl extension Devel::CheckCompiler
 0.01 2012-11-09
 
     - original version
-
