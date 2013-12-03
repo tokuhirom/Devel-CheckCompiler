@@ -7,6 +7,7 @@ use File::Temp;
 use Devel::CheckCompiler;
 
 my $check;
+my $extra_linker_flags;
 
 my $code = <<'...';
 int main(void)
@@ -28,6 +29,14 @@ subtest 'generate executable file' => sub {
     ok(check_compile($code, executable => 1) && $check == 2);
 };
 
+subtest 'generate executable file with linker option' => sub {
+    my $tmpobj = File::Temp->new;
+    my $tmpexe = File::Temp->new;
+    make_stub($tmpobj->filename, $tmpexe->filename);
+    ok(check_compile($code, executable => 1, extra_linker_flags => '-lm')
+           && ($check == 2 && $extra_linker_flags eq '-lm'));
+};
+
 done_testing;
 
 sub make_stub {
@@ -38,6 +47,11 @@ sub make_stub {
     *ExtUtils::CBuilder::new = sub { $check = 0; bless {}, shift };
     *ExtUtils::CBuilder::have_compiler = sub { 1 };
     *ExtUtils::CBuilder::compile = sub { $check = 1; $obj ? $obj : undef };
-    *ExtUtils::CBuilder::link_executable = sub { $check = 2; $exe ? $exe : undef };
+    *ExtUtils::CBuilder::link_executable = sub {
+        my (undef, %args) = @_;
+        $check = 2;
+        $extra_linker_flags = $args{extra_linker_flags} || '';
+        $exe ? $exe : undef;
+    };
 }
 
