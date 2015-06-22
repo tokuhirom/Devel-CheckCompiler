@@ -16,6 +16,9 @@ int test_c99() {
     int i = 0;
     i++;
     int j = i - 1; // another C99 feature: declaration after statement
+    // another C99 feature: for loop variable declarations
+    for (int k = 0; k < 3; i++) {
+    }
     return j;
 }
 C99
