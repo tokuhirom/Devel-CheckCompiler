@@ -6,6 +6,7 @@ our $VERSION = '0.05';
 use parent qw/Exporter/;
 
 our @EXPORT = qw/check_c99 check_c99_or_exit check_compile/;
+use Config;
 use ExtUtils::CBuilder;
 
 my $C99_SOURCE = <<'C99';
@@ -34,6 +35,26 @@ sub check_c99_or_exit {
     };
 }
 
+sub _is_gcc {
+    return 0 if $Config{gccversion} eq '';
+    # For clang on MacOSX and *BSD distributions
+    return 0 if $Config{gccversion} =~ m/clang/i;
+
+    return 1;
+}
+
+sub _gcc_version {
+    if ($Config{gccversion} =~ m/^(\d+)\.(\d+)\.(\d+)/) {
+        return {
+            major => $1,
+            minor => $2,
+            patch => $3,
+        };
+    }
+
+    return;
+}
+
 sub check_compile {
     my ($src, %opt) = @_;
 
@@ -46,8 +67,17 @@ sub check_compile {
     $tmpfile->print($src);
     $tmpfile->close();
 
+    my $compile_flags;
+    if (_is_gcc()) {
+        my $gcc_version = _gcc_version();
+        # '-std=gnu11' is default from GCC 5
+        if (defined $gcc_version && $gcc_version->{major} < 5) {
+            $compile_flags = ['-std=c99'];
+        }
+    }
+
     my $objname = eval {
-        $cbuilder->compile(source => $tmpfile->filename);
+        $cbuilder->compile(source => $tmpfile->filename, extra_compiler_flags => $compile_flags);
     };
     if ($objname) {
         my $ret = 1;
