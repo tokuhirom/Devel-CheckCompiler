@@ -39,6 +39,8 @@ sub _is_gcc {
     return 0 if $Config{gccversion} eq '';
     # For clang on MacOSX and *BSD distributions
     return 0 if $Config{gccversion} =~ m/clang/i;
+    # For Intel C and C++ compiler
+    return 0 if $Config{gccversion} =~ m/intel/i;
 
     return 1;
 }
