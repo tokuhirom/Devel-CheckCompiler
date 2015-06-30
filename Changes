@@ -1,6 +1,10 @@
 Revision history for Perl extension Devel::CheckCompiler
 
 {{$NEXT}}
+    - More strict C99 check code
+      (tokuhirom)
+    - Fix for older GCC(< 5.0)
+      (Syohei YOSHIDA)
 
 0.05 2013-12-03T22:52:46Z
 
