@@ -43,7 +43,7 @@ Tokuhiro Matsuno <tokuhirom AAJKLFJEF@ GMAIL COM>
 
 # SEE ALSO
 
-[ExtUtils::CBuilder](http://search.cpan.org/perldoc?ExtUtils::CBuilder)
+[ExtUtils::CBuilder](https://metacpan.org/pod/ExtUtils::CBuilder)
 
 # LICENSE
 

@@ -2,7 +2,7 @@ package Devel::CheckCompiler;
 use strict;
 use warnings;
 use 5.008001;
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 use parent qw/Exporter/;
 
 our @EXPORT = qw/check_c99 check_c99_or_exit check_compile/;
