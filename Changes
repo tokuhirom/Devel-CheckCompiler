@@ -2,6 +2,9 @@ Revision history for Perl extension Devel::CheckCompiler
 
 {{$NEXT}}
 
+0.07 2016-11-18T15:32:45Z
+    - Correct test dependency
+
 0.06 2015-06-30T05:22:51Z
     - More strict C99 check code
       (tokuhirom)
