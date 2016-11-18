@@ -39,7 +39,7 @@ Devel::CheckCompiler is checker for compiler's availability.
 
 # AUTHOR
 
-Tokuhiro Matsuno <tokuhirom AAJKLFJEF@ GMAIL COM>
+Tokuhiro Matsuno &lt;tokuhirom AAJKLFJEF@ GMAIL COM>
 
 # SEE ALSO
 
