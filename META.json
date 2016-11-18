@@ -28,8 +28,7 @@
    "prereqs" : {
       "build" : {
          "requires" : {
-            "Test::More" : "0.98",
-            "Test::Requires" : "0"
+            "Test::More" : "0.98"
          }
       },
       "configure" : {
